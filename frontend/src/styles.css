@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, rgba(99, 102, 241, 0.18), transparent 55%),
+      radial-gradient(circle at 20% 20%, rgba(236, 72, 153, 0.2), transparent 40%),
+      #0f172a;
+    color: #e2e8f0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_20px_60px_rgba(15,23,42,0.35)];
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-white via-indigo-100 to-rose-100 bg-clip-text text-transparent;
+  }
+
+  .button-glow {
+    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_15px_35px_rgba(76,29,149,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_20px_45px_rgba(236,72,153,0.4)] active:translate-y-0;
+  }
+
+  .chip {
+    @apply rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs text-slate-100 transition hover:border-white/30 hover:bg-white/10;
+  }
+}
+
+@layer utilities {
+  .story-paragraph {
+    @apply text-sm leading-7 text-slate-200 md:text-base md:leading-8;
+  }
+}
+
+.orb {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.6;
+}
+
+.orb.orb-indigo {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.6), transparent 65%);
+}
+
+.orb.orb-rose {
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.5), transparent 65%);
+}
+
+.loader-dots span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 4px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #c4b5fd, #f9a8d4);
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.loader-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loader-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+body {
+  font-family: system-ui, sans-serif;
+  min-height: 100vh;
+}
