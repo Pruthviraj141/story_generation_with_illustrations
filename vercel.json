@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/story/(.*)", "destination": "/api/index" },
+    { "source": "/illustrate/(.*)", "destination": "/api/index" },
+    { "source": "/create/(.*)", "destination": "/api/index" },
+    { "source": "/(.*)", "destination": "/frontend/$1" }
+  ]
+}

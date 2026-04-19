@@ -111,3 +111,5 @@ photorealistic, realism, text, watermark, logo, lowres, bad anatomy, extra limbs
 ```
 
 Handle this in the API layer by returning a JSON error response.
+
+

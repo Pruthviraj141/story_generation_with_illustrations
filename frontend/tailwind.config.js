@@ -1,30 +1,37 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        display: ["Playfair Display", "serif"],
-        body: ["Space Grotesk", "system-ui", "sans-serif"]
+        story: ["Cormorant Garamond", "Georgia", "serif"],
+        ui: ["DM Sans", "system-ui", "sans-serif"]
       },
-      keyframes: {
-        "fade-up": {
-          "0%": { opacity: 0, transform: "translateY(16px)" },
-          "100%": { opacity: 1, transform: "translateY(0)" }
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-8px)" }
-        },
-        shimmer: {
-          "0%": { backgroundPosition: "200% 0" },
-          "100%": { backgroundPosition: "-200% 0" }
-        }
+      colors: {
+        bgBase: "#0F0D1A",
+        gold: "#E8B86D",
+        rose: "#D4A0A0",
+        lavender: "#A89BC8",
+        textPrimary: "#F5F0E8"
       },
-      animation: {
-        "fade-up": "fade-up 0.7s ease-out both",
-        float: "float 6s ease-in-out infinite",
-        shimmer: "shimmer 2.4s linear infinite"
+      borderRadius: {
+        sm: "10px",
+        md: "16px",
+        lg: "24px",
+        xl: "32px",
+        pill: "9999px"
+      },
+      transitionTimingFunction: {
+        spring: "cubic-bezier(0.22, 1, 0.36, 1)",
+        bounce: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+      },
+      boxShadow: {
+        goldGlow: "0 12px 36px rgba(232, 184, 109, 0.2)"
+      },
+      backdropBlur: {
+        glass: "20px",
+        mobileglass: "8px"
       }
     }
   },
